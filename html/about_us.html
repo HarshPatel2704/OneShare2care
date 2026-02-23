@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+    <title>Kindio - Charity Donation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white">
+    <!-- About Us Section (Similar to the provided image) -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Side - Text Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-sm font-semibold text-red-500 uppercase tracking-wider mb-2">About Us</h2>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-6">Our goal is to save more lives with your help.</h1>
+                    </div>
+                    
+                    <!-- Quote Section -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-500">
+                        <p class="text-gray-600 italic mb-3">"Kindio has been instrumental in helping us reach more families in need. Their dedication and transparency make them our trusted partner."</p>
+                        <p class="text-sm font-semibold text-gray-800">- The Community Kitchen</p>
+                    </div>
+                    
+                    <!-- Fundraising Section -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-holding-heart text-red-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Fundraising</h3>
+                        </div>
+                        <p class="text-gray-600">We organize impactful fundraising campaigns that bring communities together to support critical causes. Every dollar raised goes directly to those who need it most.</p>
+                    </div>
+                    
+                    <!-- Donation Marketing Section -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-bullhorn text-red-500 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Donation Marketing</h3>
+                        </div>
+                        <p class="text-gray-600">Our strategic approach to donation marketing ensures maximum reach and impact, connecting generous donors with meaningful causes worldwide.</p>
+                    </div>
+                    
+                    <!-- More About Us Button -->
+                    <button class="bg-red-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-red-600 transition flex items-center">
+                        More About Us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Right Side - Images Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://picsum.photos/seed/child1/300/400.jpg" alt="Child receiving supplies" class="rounded-lg shadow-md w-full h-64 object-cover">
+                        <img src="https://picsum.photos/seed/child2/300/250.jpg" alt="Children smiling" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <img src="https://picsum.photos/seed/child3/300/250.jpg" alt="Volunteer with children" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="https://picsum.photos/seed/child4/300/400.jpg" alt="Happy children" class="rounded-lg shadow-md w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/person1/150/150.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+                    <p class="text-sm text-gray-600">Executive Director</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/person2/150/150.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-gray-900">Michael Chen</h4>
+                    <p class="text-sm text-gray-600">Program Manager</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/person3/150/150.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-gray-900">Emily Davis</h4>
+                    <p class="text-sm text-gray-600">Fundraising Lead</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/person4/150/150.jpg" alt="Team member" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="font-semibold text-gray-900">James Wilson</h4>
+                    <p class="text-sm text-gray-600">Volunteer Coordinator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.hero-image');
+            const texts = document.querySelectorAll('.hero-text');
+            let currentIndex = 0;
+            
+            function changeSlide() {
+                // Remove active class from current image and text
+                images[currentIndex].classList.remove('active');
+                texts[currentIndex].classList.remove('active');
+                
+                // Move to next slide
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                // Add active class to next image and text
+                setTimeout(() => {
+                    images[currentIndex].classList.add('active');
+                    texts[currentIndex].classList.add('active');
+                }, 100); // Small delay for smoother transition
+            }
+            
+            // Change slide every 5 seconds
+            setInterval(changeSlide, 5000);
+        });
+    </script>
+</body>
+</html>

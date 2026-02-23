@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns - Kindio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-heart text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold text-gray-800">Kindio</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="Home.html" class="text-gray-700 hover:text-red-500 font-medium">Home</a>
+                    <a href="campaigns.html" class="text-red-500 font-medium border-b-2 border-red-500">Campaigns</a>
+                    <a href="about.html" class="text-gray-700 hover:text-red-500 font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-red-500 font-medium">Contact</a>
+                </div>
+                <a href="donate.html" class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-red-500 to-red-600 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-2">Our Campaigns</h1>
+            <p class="text-red-100">Browse and support causes that matter to you</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="bg-gray-50 py-8 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">All</button>
+                <button class="bg-white text-gray-700 px-6 py-2 rounded-lg border border-gray-300 hover:border-red-500 transition">Education</button>
+                <button class="bg-white text-gray-700 px-6 py-2 rounded-lg border border-gray-300 hover:border-red-500 transition">Healthcare</button>
+                <button class="bg-white text-gray-700 px-6 py-2 rounded-lg border border-gray-300 hover:border-red-500 transition">Environment</button>
+                <button class="bg-white text-gray-700 px-6 py-2 rounded-lg border border-gray-300 hover:border-red-500 transition">Disaster Relief</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaigns Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Campaign 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Education" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Education</span>
+                        <h3 class="text-xl font-bold mb-2">Education for All</h3>
+                        <p class="text-gray-600 mb-4">Help us provide quality education to underprivileged children in rural areas.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$45,000 of $60,000</span>
+                                <span class="text-sm text-gray-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Healthcare" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Healthcare</span>
+                        <h3 class="text-xl font-bold mb-2">Healthcare Initiative</h3>
+                        <p class="text-gray-600 mb-4">Support medical facilities and provide healthcare to remote communities.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$32,000 of $50,000</span>
+                                <span class="text-sm text-gray-600">64%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 64%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Environment" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Environment</span>
+                        <h3 class="text-xl font-bold mb-2">Environmental Care</h3>
+                        <p class="text-gray-600 mb-4">Join us in protecting our planet and preserving nature for future generations.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$28,000 of $40,000</span>
+                                <span class="text-sm text-gray-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Disaster Relief" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Disaster Relief</span>
+                        <h3 class="text-xl font-bold mb-2">Emergency Disaster Relief</h3>
+                        <p class="text-gray-600 mb-4">Provide immediate aid and support to communities affected by natural disasters.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$55,000 of $75,000</span>
+                                <span class="text-sm text-gray-600">73%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 73%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Food Security" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Food Security</span>
+                        <h3 class="text-xl font-bold mb-2">Food Security Program</h3>
+                        <p class="text-gray-600 mb-4">Combat hunger and malnutrition in underdeveloped regions.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$18,000 of $30,000</span>
+                                <span class="text-sm text-gray-600">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Water" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Water & Sanitation</span>
+                        <h3 class="text-xl font-bold mb-2">Clean Water Initiative</h3>
+                        <p class="text-gray-600 mb-4">Provide access to clean water and sanitation facilities to communities in need.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$38,000 of $50,000</span>
+                                <span class="text-sm text-gray-600">76%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 76%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-heart text-red-500 text-xl"></i>
+                        <span class="text-xl font-bold">Kindio</span>
+                    </div>
+                    <p class="text-gray-400">Making the world a better place, one donation at a time.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="Home.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="campaigns.html" class="hover:text-white transition">Campaigns</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Kindio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

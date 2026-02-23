@@ -1,0 +1,74 @@
+-- Create Database
+CREATE DATABASE shareforcare;
+
+-- Use the Database
+USE shareforcare;
+
+-- Table 1: Users
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    gender VARCHAR(10),
+    contact_no VARCHAR(15),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    city VARCHAR(100),
+    photo VARCHAR(255),
+    role ENUM('admin', 'user', 'donor', 'needy') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Table 2: Requests
+CREATE TABLE requests (
+    request_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    category VARCHAR(50),
+    description TEXT,
+    image VARCHAR(255),
+    location VARCHAR(255),
+    contact_no VARCHAR(15),
+    request_date DATE,
+    status ENUM('Pending', 'Approved', 'Completed') DEFAULT 'Pending',
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Table 3: Donations
+CREATE TABLE donations (
+    donation_id INT AUTO_INCREMENT PRIMARY KEY,
+    request_id INT,
+    donor_id INT,
+    donation_date DATE,
+    location VARCHAR(255),
+    proof_image VARCHAR(255),
+    description TEXT,
+    FOREIGN KEY (request_id) REFERENCES requests(request_id) ON DELETE CASCADE,
+    FOREIGN KEY (donor_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Table 4: Success Stories
+CREATE TABLE success_stories (
+    story_id INT AUTO_INCREMENT PRIMARY KEY,
+    donation_id INT,
+    title VARCHAR(150),
+    message TEXT,
+    image VARCHAR(255),
+    success_date DATE,
+    FOREIGN KEY (donation_id) REFERENCES donations(donation_id) ON DELETE CASCADE
+);
+
+-- Table 5: Admin (optional if admins are not stored in users)
+CREATE TABLE admin (
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+-- logo design
+-- https://www.canva.com/design/DAG2NhdNb_A/8Ca5Gk_R9VTFJQ13TgtbLA/edit
+
+deployed website details
+if0_40431259 username
+shareforcare pass 
+if0_40431259_shareforcare  dbname

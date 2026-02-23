@@ -1,0 +1,114 @@
+<?php
+session_start();
+include 'db_connect.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareForCare - Helping Hands Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white">
+
+    <!-- Navigation -->
+    <?php include 'header.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-500 to-red-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl font-bold mb-6">Share. Care. Make a Difference.</h1>
+                <p class="text-xl mb-8 text-red-100">
+                    Connect donors with people in need — join the community that shares kindness and hope.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="post_request.php" class="bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Request Help</a>
+                    <a href="#requests" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-red-600 transition">View Requests</a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <img src="img/home.jpeg" alt="Helping hands" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Approved Requests Section -->
+    <section id="requests" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Admin Approved Requests</h2>
+
+            <?php
+            // Fetch only approved requests
+            $sql = "SELECT r.*, u.name AS username 
+                    FROM requests r 
+                    JOIN users u ON r.user_id = u.user_id 
+                    WHERE r.status = 'approved' 
+                    ORDER BY r.request_id DESC";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                echo '<div class="grid md:grid-cols-3 gap-8">';
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $img = !empty($row['image']) ? 'uploads/'.$row['image'] : 'img/default.jpg';
+                    echo '
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                        <img src="'.$img.'" alt="Request Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">'.$row['category'].'</h3>
+                            <p class="text-gray-600 mb-3">'.substr($row['description'], 0, 100).'...</p>
+                            <p class="text-sm text-gray-500 mb-2"><i class="fas fa-map-marker-alt text-red-500 mr-2"></i>'.$row['location'].'</p>
+                            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-phone text-red-500 mr-2"></i>'.$row['contact_no'].'</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">Posted by: <strong>'.$row['username'].'</strong></span>
+                                <a href="contact_request.php?id='.$row['request_id'].'" class="text-red-600 font-semibold hover:underline">Help Now</a>
+                            </div>
+                        </div>
+                    </div>';
+                }
+                echo '</div>';
+            } else {
+                echo '<p class="text-center text-gray-600">No approved requests available yet.</p>';
+            }
+            ?>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Why Choose ShareForCare</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Secure</h3>
+                    <p class="text-gray-600">Your information and donations are protected and confidential.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Verified Requests</h3>
+                    <p class="text-gray-600">Each request is verified by admins to ensure transparency.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Community Support</h3>
+                    <p class="text-gray-600">Join a growing network of kind-hearted donors and volunteers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
+
+</body>
+</html>

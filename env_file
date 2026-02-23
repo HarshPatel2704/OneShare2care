@@ -1,0 +1,73 @@
+new_pass :- fkfmthsrbcwqohap
+old_pass :- gzkvsnqgnbymcdys
+
+modified message
+<html>
+  <body style='margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, Helvetica, sans-serif;'>
+    <table width='100%' cellpadding='0' cellspacing='0' style='padding:20px;'>
+      <tr>
+        <td align='center'>
+          <table width='600' cellpadding='0' cellspacing='0' style='background:#ffffff; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); overflow:hidden;'>
+            
+            <!-- Header -->
+            <tr>
+              <td style='background:#145F2A; padding:20px; text-align:center;'>
+                <h1 style='margin:0; color:#ffffff; font-size:24px;'>ShareForCare</h1>
+                <p style='margin:5px 0 0; color:#dfeee5; font-size:14px;'>
+                  Where kindness meets action
+                </p>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td style='padding:30px;'>
+                <h2 style='color:#145F2A; margin-top:0;'>Hello $name,</h2>
+
+                <p style='color:#333333; font-size:15px; line-height:1.6;'>
+                  Thank you for registering with <strong>ShareForCare</strong>.
+                  We are delighted to welcome you to our growing community.
+                </p>
+
+                <p style='color:#333333; font-size:15px; line-height:1.6;'>
+                  Your account has been successfully created as a 
+                  <strong style='color:#145F2A;'>$role</strong>.
+                </p>
+
+                <p style='color:#333333; font-size:15px; line-height:1.6;'>
+                  At ShareForCare, we believe small acts of kindness can create
+                  a big impact. We are excited to have you be part of this journey.
+                </p>
+
+                <!-- Button -->
+                <div style='text-align:center; margin:30px 0;'>
+                  <a href='#' style='background:#145F2A; color:#ffffff; text-decoration:none; padding:12px 28px; border-radius:25px; font-size:15px; display:inline-block;'>
+                    Get Started
+                  </a>
+                </div>
+
+                <p style='color:#555555; font-size:14px; line-height:1.6;'>
+                  If you have any questions, feel free to reply to this email —
+                  we’re always happy to help.
+                </p>
+
+                <p style='color:#555555; font-size:14px; margin-bottom:0;'>
+                  Warm regards,<br>
+                  <strong>Team ShareForCare</strong>
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style='background:#f1f1f1; padding:15px; text-align:center; font-size:12px; color:#777777;'>
+                © <?php echo date('Y'); ?> ShareForCare. All rights reserved.
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

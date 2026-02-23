@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindio - Charity Donation Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-heart text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold text-gray-800">Kindio</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="home.html" class="text-gray-700 hover:text-red-500 font-medium">Home</a>
+                    <a href="campaigns.html" class="text-gray-700 hover:text-red-500 font-medium">Campaigns</a>
+                    <a href="about.html" class="text-gray-700 hover:text-red-500 font-medium">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-red-500 font-medium">Contact</a>
+                </div>
+                <a href="donate.html" class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-red-500 to-red-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6">Make a Difference Today</h1>
+                    <p class="text-xl mb-8 text-red-100">Join thousands of compassionate people making real change in the world. Your donation helps us reach those in need.</p>
+                    <div class="flex space-x-4">
+                        <a href="donate.html" class="bg-white text-red-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Donate Now</a>
+                        <a href="campaigns.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-red-500 transition">View Campaigns</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="img/home.jpeg" alt="Charity volunteers" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-500 mb-2">$2.5M+</div>
+                    <p class="text-gray-600">Total Raised</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-500 mb-2">50K+</div>
+                    <p class="text-gray-600">Donors</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-500 mb-2">100+</div>
+                    <p class="text-gray-600">Active Campaigns</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-red-500 mb-2">25+</div>
+                    <p class="text-gray-600">Countries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Campaigns -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Featured Campaigns</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Campaign Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Education campaign" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Education for All</h3>
+                        <p class="text-gray-600 mb-4">Help us provide quality education to underprivileged children.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$45,000 of $60,000</span>
+                                <span class="text-sm text-gray-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="/placeholder.svg?height=250&width=400" alt="Healthcare campaign" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Healthcare Initiative</h3>
+                        <p class="text-gray-600 mb-4">Support medical facilities in remote areas.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$32,000 of $50,000</span>
+                                <span class="text-sm text-gray-600">64%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 64%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+
+                <!-- Campaign Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img src="img/home.jpeg" alt="Environment campaign" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Environmental Care</h3>
+                        <p class="text-gray-600 mb-4">Join us in protecting our planet for future generations.</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-semibold">$28,000 of $40,000</span>
+                                <span class="text-sm text-gray-600">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-red-500 h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <a href="donate.html" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-center font-semibold">Donate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="campaigns.html" class="inline-block bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 transition font-semibold">View All Campaigns</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Why Choose Kindio</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">100% Secure</h3>
+                    <p class="text-gray-600">Your donations are protected with industry-leading security.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Verified Campaigns</h3>
+                    <p class="text-gray-600">All campaigns are verified and monitored for transparency.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Global Impact</h3>
+                    <p class="text-gray-600">Make a difference in communities around the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-red-500 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Make an Impact?</h2>
+            <p class="text-xl mb-8 text-red-100">Every donation, no matter the size, helps us create positive change.</p>
+            <a href="donate.html" class="inline-block bg-white text-red-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Start Donating</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-heart text-red-500 text-xl"></i>
+                        <span class="text-xl font-bold">Kindio</span>
+                    </div>
+                    <p class="text-gray-400">Making the world a better place, one donation at a time.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="home.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="campaigns.html" class="hover:text-white transition">Campaigns</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Kindio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Kindio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="Home.html" class="flex items-center gap-2">
+                    <i class="fas fa-heart text-red-500 text-2xl"></i>
+                    <span class="text-2xl font-bold text-gray-900">Kindio</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-center mb-2">Create Account</h2>
+                <p class="text-gray-600 text-center mb-8">Join Kindio and start making a difference</p>
+
+                <form id="registerForm" onsubmit="handleRegister(event)">
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">First Name</label>
+                            <input type="text" id="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Last Name</label>
+                            <input type="text" id="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                        <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" placeholder="you@example.com">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Password</label>
+                        <input type="password" id="password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" placeholder="••••••••">
+                        <p class="text-sm text-gray-600 mt-2">At least 8 characters with uppercase, lowercase, and numbers</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-500" placeholder="••••••••">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="flex items-start">
+                            <input type="checkbox" id="terms" required class="w-4 h-4 text-red-500 rounded mt-1">
+                            <span class="ml-2 text-gray-700 text-sm">I agree to the <a href="#" class="text-red-500 hover:text-red-600">Terms of Service</a> and <a href="#" class="text-red-500 hover:text-red-600">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-lg font-bold hover:bg-red-600 transition mb-4">
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="relative mb-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        <span class="text-sm font-semibold">Google</span>
+                    </button>
+                    <button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        <i class="fab fa-facebook text-blue-600 mr-2"></i>
+                        <span class="text-sm font-semibold">Facebook</span>
+                    </button>
+                </div>
+
+                <p class="text-center text-gray-600">
+                    Already have an account?
+                    <a href="login.html" class="text-red-500 hover:text-red-600 font-bold">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Validate password strength
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters!');
+                return;
+            }
+
+            // Store user data
+            localStorage.setItem('userLoggedIn', 'true');
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userName', firstName + ' ' + lastName);
+
+            // Redirect to home
+            window.location.href = 'Home.html';
+        }
+    </script>
+</body>
+</html>
