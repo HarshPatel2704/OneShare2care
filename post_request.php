@@ -196,7 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Remove image
         function removeImage() {
             document.getElementById('image').value = '';
             document.getElementById('imagePreview').classList.add('hidden');
