@@ -61,18 +61,15 @@ session_start()?>
     </style>
 </head>
 <body>
-    <!-- Navigation Header -->
+
     <?php include 'header.php'; ?>
 
-    <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Header Section -->
         <div class="mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-2">Pending Requests</h2>
             <p class="text-gray-600">Review and verify help requests from community members</p>
         </div>
 
-        <!-- Requests Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <?php
             include 'db_connect.php';
@@ -97,9 +94,7 @@ session_start()?>
                             </div>
                         </div>
 
-                        <!-- Content Section -->
                         <div class="p-5">
-                            <!-- User Info -->
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
                                     <i class="fas fa-user text-red-500"></i>
@@ -110,24 +105,20 @@ session_start()?>
                                 </div>
                             </div>
 
-                            <!-- Category Badge -->
                             <div class="mb-3">
                                 <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
                                     <i class="fas fa-tag mr-1"></i><?php echo htmlspecialchars($row['category']); ?>
                                 </span>
                             </div>
 
-                            <!-- Description -->
                             <p class="text-gray-700 text-sm mb-4 line-clamp-3">
                                 <?php echo htmlspecialchars($row['description']); ?>
                             </p>
 
-                            <!-- Request ID -->
                             <p class="text-xs text-gray-500 mb-4">
                                 <strong>Request ID:</strong> #<?php echo htmlspecialchars($row['request_id']); ?>
                             </p>
 
-                            <!-- Action Buttons -->
                             <div class="flex gap-3">
                                 <a href="verify_request.php?action=approve&id=<?php echo htmlspecialchars($row['request_id']); ?>" 
                                    class="btn-approve flex-1 text-center">
@@ -144,7 +135,6 @@ session_start()?>
                 }
             } else {
                 ?>
-                <!-- No Requests Message -->
                 <div class="col-span-full">
                     <div class="bg-white rounded-lg shadow-lg p-12 text-center">
                         <i class="fas fa-inbox text-gray-300 text-6xl mb-4"></i>
@@ -158,7 +148,6 @@ session_start()?>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="text-center">
