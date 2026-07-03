@@ -2,19 +2,17 @@
 session_start();
 include 'db_connect.php';
 
-// Check if user is logged in and is admin
 if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
     header("Location: login.php");
     exit();
 }
 
-// Get admin details
  $admin_id = $_SESSION['user_id'];
  $admin_query = "SELECT * FROM users WHERE user_id = '$admin_id'";
  $admin_result = mysqli_query($conn, $admin_query);
  $admin = mysqli_fetch_assoc($admin_result);
 
-// Get statistics
+
  $total_users_query = "SELECT COUNT(*) as total FROM users";
  $total_users_result = mysqli_query($conn, $total_users_query);
  $total_users = mysqli_fetch_assoc($total_users_result)['total'];
@@ -39,7 +37,7 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
  $total_donations_result = mysqli_query($conn, $total_donations_query);
  $total_donations = mysqli_fetch_assoc($total_donations_result)['total'];
 
-// Get recent activities
+
  $recent_requests_query = "SELECT r.*, u.name as user_name, u.city 
                           FROM requests r 
                           JOIN users u ON r.user_id = u.user_id 
@@ -49,7 +47,6 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
  $recent_donations_query = "SELECT * FROM success_stories ORDER BY created_at DESC LIMIT 5";
  $recent_donations_result = mysqli_query($conn, $recent_donations_query);
 
-// Get monthly statistics
  $current_month = date('Y-m');
  $monthly_requests_query = "SELECT COUNT(*) as total FROM requests WHERE DATE_FORMAT(request_date, '%Y-%m') = '$current_month'";
  $monthly_requests_result = mysqli_query($conn, $monthly_requests_query);
@@ -204,12 +201,12 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <?php include 'header.php'; ?>
 
-    <!-- Dashboard Content -->
+
     <div class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Admin Header -->
+
         <div class="admin-header">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-4">
@@ -237,7 +234,6 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
             </div>
         </div>
 
-        <!-- Statistics Overview -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div class="stat-card text-center">
                 <i class="fas fa-users text-3xl mb-3" style="color: #145F2A;"></i>
@@ -261,7 +257,7 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
             </div>
         </div>
 
-        <!-- Detailed Statistics -->
+        
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             <!-- Request Status Chart -->
             <div class="chart-container">
@@ -297,7 +293,6 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
                 </div>
             </div>
 
-            <!-- Monthly Statistics -->
             <div class="chart-container">
                 <h3 class="text-xl font-semibold primary-green mb-4">This Month's Activity</h3>
                 <div class="grid grid-cols-2 gap-4">
@@ -315,9 +310,7 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['role'] != 'admin') {
             </div>
         </div>
 
-        <!-- Main Content Grid -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Recent Requests -->
             <div class="bg-white rounded-2xl shadow-lg p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold primary-green">Recent Requests</h2>
