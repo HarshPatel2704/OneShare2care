@@ -76,7 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php endif; ?>
 
-        <!-- Form Card -->
         <div class="bg-white rounded-lg shadow-lg p-8">
             <form id="postRequestForm" method="POST" enctype="multipart/form-data">
                 <!-- Category Selection -->
@@ -98,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
 
-                <!-- Location -->
                 <div class="mb-8">
                     <label for="location" class="block text-sm font-semibold text-gray-900 mb-3">
                         <i class="fas fa-map-marker-alt text-green-800 mr-2"></i>Location
@@ -107,7 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-green-600 transition">
                 </div>
 
-                <!-- Contact Number -->
                 <div class="mb-8">
                     <label for="contact_no" class="block text-sm font-semibold text-gray-900 mb-3">
                         <i class="fas fa-phone text-green-800 mr-2"></i>Contact Number
@@ -116,7 +113,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-green-600 transition">
                 </div>
 
-                <!-- Description -->
                 <div class="mb-8">
                     <label for="description" class="block text-sm font-semibold text-gray-900 mb-3">
                         <i class="fas fa-pen text-green-800 mr-2"></i>Detailed Description
