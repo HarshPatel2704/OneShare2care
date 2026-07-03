@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $target = "uploads/" . $photo;
         move_uploaded_file($_FILES['photo']['tmp_name'], $target);
     }
-
     // Start transaction
     mysqli_begin_transaction($conn);
 
